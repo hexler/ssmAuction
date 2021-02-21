@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gec.dao.AuctionrecordMapper">
+    <!--
+    1.映射文件中namespace要等于接口的全路径名称
+2.映射文件中sql语句的id要等于接口的方法名称
+3.映射文件中输入参数类型要等于接口方法中的参数类型
+4.映射文件中的返回值类型要等于接口方法中的返回值类型
+
+    -->
+   <select id="getAuctionrecordList" resultType="com.gec.pojo.Auctionrecord">
+
+       select * from auctionrecord where auctionid = #{auctionid} order by auctionPrice desc
+   </select>
+
+    <!--<insert id="">
+        insert into
+    </insert>-->
+    <insert id="saveAuctionrecord">
+        insert into
+                auctionrecord(userId,auctionid,auctionTime,auctionPrice)
+        values (#{userid},#{auctionid},#{auctiontime},#{auctionprice})
+
+    </insert>
+
+</mapper>

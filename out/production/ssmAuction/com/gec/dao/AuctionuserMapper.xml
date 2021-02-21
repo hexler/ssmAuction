@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gec.dao.AuctionuserMapper">
+    <!--
+    1.映射文件中namespace要等于接口的全路径名称
+2.映射文件中sql语句的id要等于接口的方法名称
+3.映射文件中输入参数类型要等于接口方法中的参数类型
+4.映射文件中的返回值类型要等于接口方法中的返回值类型
+
+    -->
+    <select id="getAuctionuserByUserNameAndUserPassWord" resultType="com.gec.pojo.Auctionuser">
+    <!-- #{} 更安全-->
+        select * from auctionuser where userName =#{username}  and userPassword = #{userpassword}
+        <!--select * from auctionuser where userName =${username}  and userPassword = ${userpassword}-->
+
+    </select>
+<!--    <select id="getAuctionuserByUserNameAndUserPassWord" parameterType="com.gec.pojo.Auctionuser" resultType="com.gec.pojo.Auctionuser">
+
+
+
+    </select>-->
+<select id="getAuctionuserByUserid" resultType="com.gec.pojo.Auctionuser">
+    select username from auctionuser where userid = #{userid}
+</select>
+
+
+</mapper>
